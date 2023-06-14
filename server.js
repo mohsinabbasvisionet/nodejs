@@ -24,6 +24,7 @@ const server = http.createServer((request, response) => {
         fs.readFile(filePath, 'utf8', (error, data) => {
            if (error){
                response.statusCode = 500;
+               response.end('Some thing went wrong please check the file path');
            } else {
                response.statusCode = 200;
                response.setHeader('Content-Type', 'text/plain');
